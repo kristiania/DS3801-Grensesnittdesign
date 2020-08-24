@@ -1,0 +1,75 @@
+/* Note make for mobile firs. If you do have time, then you can utilize the 
+@Media querryies to make your code look good on both tables and desktops as well */
+
+body, p, #container{
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica; 
+}
+
+h1,h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: #8f8f8f
+}
+
+.card-view {
+  height: 100%;
+  max-height: 300px;
+  max-width: 350px;
+  margin: 15px;
+  background: white;
+
+
+  -webkit-box-shadow: 10px 10px 50px -20px rgba(0,0,0,0.3);
+  -moz-box-shadow: 10px 10px 50px -20px rgba(0,0,0,0.3);
+  box-shadow: 10px 10px 50px -20px rgba(0,0,0,0.3);
+  
+  border: 0px solid white;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.text-card-view{
+  padding:16px;
+  padding-top: 8px;
+}
+
+img {
+  border-radius: 10px 10px 0 0;
+}
+
+.image-container {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  
+}
+
+@media only screen and (min-width: 600px) { /* For tablets: */ }
+
+@media only screen and (min-width: 768px) { /* For desktop: */
+  
+  .card-view {
+    float:left;
+    margin: 15px;
+    transition: 0.4s;
+    background: #f5f5f5;
+  }
+
+  .card-view:hover {
+    background: white;
+    -webkit-box-shadow: 10px 10px 80px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 10px 10px 80px -20px rgba(0,0,0,0.8);
+    box-shadow: 10px 10px 80px -20px rgba(0,0,0,0.8);
+    cursor: pointer;
+  }
+}
