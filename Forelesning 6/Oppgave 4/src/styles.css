@@ -11,16 +11,11 @@ body {
     animation: animating-background-color 30s ease infinite;
 }
 
-
 .header-img {
     margin: 0;
     grid-column: 1 / span 2;
     text-align: center;
     position:relative;
-
-    -moz-box-shadow:    inset 0px 0px 200px rgba(0,0,0,0.6);
-    -webkit-box-shadow: inset 0px 0px 200px rgba(0,0,0,0.6);
-    box-shadow:         inset 0px 0px 200px rgba(0,0,0,0.6);
 }
 
 .header-img h1 {
@@ -76,8 +71,6 @@ body {
     padding: 0;
     transition: 0.3s;
 }
-
-
 
 .latest-articles-container {
     grid-column: 1 / span 2;
@@ -183,18 +176,19 @@ h4 {
 
 }
 
-
 /* *************************************************************** Animations *************************************************************** */
 @-webkit-keyframes animating-background-color {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
 @-moz-keyframes animating-background-color {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
 @keyframes animating-background-color { 
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
@@ -204,7 +198,6 @@ h4 {
 /* Light mode */
 @media (prefers-color-scheme: light) {
     body {
-        
         background: linear-gradient(270deg, #574b90, #546de5); 
         color: black;
     }
@@ -214,6 +207,7 @@ h4 {
 @media (prefers-color-scheme: dark) {
     body {
         background: linear-gradient(270deg, #191970, #00008B);
+        color: white;
     }
 
     .latest-article { 
