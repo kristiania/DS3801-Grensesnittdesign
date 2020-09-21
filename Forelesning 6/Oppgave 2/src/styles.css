@@ -1,0 +1,26 @@
+.grid-container{
+
+}
+
+grid-item {
+}
+
+#grid-one{
+    background-color: red;
+    color: red;
+}
+
+#grid-two{
+    background-color: blue;
+    color: blue;
+}
+
+#grid-three{
+    background-color: green;
+    color: green;
+}
+
+.grid-four{
+    background-color: purple;
+    color: purple;
+}
