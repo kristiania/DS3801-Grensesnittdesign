@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 10px;
+    overflow: hidden;
+}
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.card:hover > .card-image {
+    transform: scale(1.1);
+}
+
+.container {
+    margin-top: 5px;
+    padding: 2px 16px;
+}
+
+.card-image {
+    height: 125px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.restaurant-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#return-button {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 50px;
+    padding: 0 15px;
+    position: fixed;
+    top: 0.1em;
+    left: 0.1rem;
+    transition: .5s;
+}
+
+#return-button:hover {
+    background-color: lightgrey;
+    color: black;
+
+}
