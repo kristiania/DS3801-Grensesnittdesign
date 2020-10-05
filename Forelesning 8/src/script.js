@@ -33,4 +33,57 @@ const items = [
     }
 ];
 
+const createCardView = (item) => {
+    const cardView = document.createElement('div');
 
+    cardView.innerHTML = `
+        <div class="card">
+            <img class="card-image" src=${item.imageURL} alt=${item.imageAltText}>
+            <div class="container">
+                <h4>${item.cardTitle}</h4>
+                <p>${item.cardbodyText}</p>
+            </div>
+        </div
+    `;
+
+    cardView.addEventListener('click', () => {
+        createRestuarantpage(item, root);
+    });
+
+    return cardView;
+};
+
+const createMainPage = () => {
+    root.innerHTML = `<h1> Velkommen til FoodDeliva 🍽 </h1>`;
+
+    items.map(item => {
+        const newCard = createCardView(item);
+        root.appendChild(newCard);
+    });
+};
+
+const createRestuarantpage = (item, parent) => {
+    const pageViwe = document.createElement('div');
+
+    pageViwe.innerHTML = `
+        <div class="restaurant-view">
+            <button type="button" id="return-button">X</button>
+            <img class="restaurant-image" src="${item.imageURL} alt=${item.imageAltText}>"
+            <h2>${item.cardTitle}</h2>
+            <h3>${item.cardbodyText}</h3>
+        </div>
+    `;
+
+    /* parent.innerHTML = null;
+    parent.appendChild(pageViwe); */
+
+    parent.innerHTML = pageViwe.innerHTML;
+
+    const returnButton = document.getElementById('return-button');
+    returnButton.addEventListener('click', () => {
+        createMainPage();
+    });
+};
+
+
+createMainPage();
