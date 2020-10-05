@@ -87,3 +87,21 @@ const createRestuarantpage = (item, parent) => {
 
 
 createMainPage();
+
+/* const createButton = (text, parent, event) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'simple-button';
+    button.innerText = text;
+
+    button.addEventListener('click', event);
+    parent.appendChild(button);
+};
+
+createButton('Tap me', root, () => {
+    console.log('Tapped');
+
+    const text = document.createElement('h1');
+    text.innerText = 'Hello';
+    root.appendChild(text);
+}); */
