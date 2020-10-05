@@ -1,0 +1,30 @@
+#root {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner {
+    color: green;
+}
+
+.player-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 300px;
+}
+
+.score {
+    grid-column: 1 / span 2;
+    text-align: center;
+}
+
+.increment-button {
+    width: 150px;
+}
+
+.reset-button {
+    grid-column: 1 / span 2;
+}
