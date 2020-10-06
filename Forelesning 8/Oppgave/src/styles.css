@@ -19,6 +19,17 @@
 .score {
     grid-column: 1 / span 2;
     text-align: center;
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.player-name {
+    grid-column: 1 / span 2;
+    text-align: center;
+    color: darkgrey;
+    margin: 0;
+    padding: 0;
 }
 
 .increment-button {
@@ -26,5 +37,9 @@
 }
 
 .reset-button {
+    grid-column: 1 / span 2;
+}
+
+#winner-text {
     grid-column: 1 / span 2;
 }
