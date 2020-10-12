@@ -1,31 +1,76 @@
 import React, { Component } from 'react';
 
-import Button from './Button';
+import Game from './Game';
 
 class App extends Component {
-  // State - variabler eller funskjoner innad i en klasse/komponent
-  state = {
-    name: 'Henrik',
-    age: 29
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      players: [
+        {
+          name: 'Player 1',
+          score: 0
+        },
+        {
+          name: 'Player 2',
+          score: 0
+        }
+      ]
+    };
   }
 
-  handleNameChange = () => {
-    const newName = 'Kristian';
-    this.setState({
-      name: newName
-    })
+  handleAddEvent = (player) => {
+    let newState = this.state;
+
+    newState.players.forEach(_player => {
+      if (_player.name === player.name) {
+        _player.score++;
+      }
+    });
+
+    this.setState(newState);
   };
 
-  render = () => (
-    <div>
-      <h1 className="header-title">Hello {this.state.name}!</h1>
-      <Button 
-        title="Endre Navn"
-        onClick={this.handleNameChange}
-        className='change-name-button'
-      />
-    </div>
-  );
+  handleSubtractEvent = (player) => {
+    let newState = this.state;
+    
+    newState.players.forEach(_player => {
+      if (_player.name === player.name && _player.score > 0) {
+          _player.score--;
+      }
+    });
+
+    this.setState(newState);
+  };
+
+  handleReset = () => {
+    this.setState({
+      players: [
+        {
+          name: 'Player 1',
+          score: 0
+        },
+        {
+          name: 'Player 2',
+          score: 0
+        }
+      ]
+    });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <Game 
+          players={this.state.players}
+          handleAddEvent={this.handleAddEvent}
+          handleSubtractEvent={this.handleSubtractEvent}
+          handleReset={this.handleReset}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
