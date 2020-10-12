@@ -49,12 +49,10 @@ const resetButtonPressed = () => {
 
 
 const doWeHaveAWinner = () => {
-    if (players[0].score >= 11 && players[0].score >= players[1].score + 2) {
+    if (players[0].score >= 11 && players[0].score >= players[1].score + 2||
+        players[1].score >= 11 && players[1].score >= players[0].score + 2) {
         return true;
-    } else if (players[1].score >= 11 && players[1].score >= players[0].score + 2) {
-        return true;
-    } 
-
+    }
     return false;
 };
 
