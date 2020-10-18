@@ -1,21 +1,19 @@
 import React from 'react';
 
-import Button from './Components/Button';
+import Button from './Button';
 
 const ScoreKeeper = (props) => {
 
     const updateAddEvent = () => {
-        const player = props.player;
-        props.handleAddEvent(player);
+        props.handleAddEvent(props.player);
     }
 
     const updateSubtractEvent = () => {
-        const player = props.player;
-        props.handleSubtractEvent(player);
+        props.handleSubtractEvent(props.player);
     }
 
     return (
-        <div className='score-bord'>
+        <div className={props.className}>
             <h1>{props.player.score}</h1>
             <h3>{props.player.name}</h3>
             <div className='button-div'>
