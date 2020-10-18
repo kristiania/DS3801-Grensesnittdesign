@@ -12,14 +12,18 @@ const  Game = (props) => {
     const playerTwo = players[1];
 
     if (playerOne.score >= 11 && playerOne.score >= playerTwo.score + 2) {
+      players[0].isWinner = true;
       setGameOver(true);
     } else if (playerTwo.score >= 11 && playerTwo.score >= playerOne.score + 2) {
+      players[1].isWinner = true;
       setGameOver(true);
     } else {
+      players[0].isWinner = false;
+      players[1].isWinner = false;
       setGameOver(false);
     }
 
-  }, [players, gameOver]);
+  }, [players]);
 
 
   const handlePlayerChange = (funct) => {
@@ -53,12 +57,12 @@ const  Game = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       {players.map(player => 
         <ScoreKeeper 
           key={player.name}
           player={player}
-          className={'score-bord'}
+          className={player.isWinner ? 'score-bord winner' : 'score-bord'}
           handleAddEvent={handleAddEvent}
           handleSubtractEvent={handleSubtractEvent}
         />
@@ -69,7 +73,7 @@ const  Game = (props) => {
           className='reset-button'
           onClick={handleReset}
       />
-    </React.Fragment>
+    </>
   );
 }
 

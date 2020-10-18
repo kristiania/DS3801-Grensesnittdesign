@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Game from './Game';
-import SelectPlayers from './SelectPlayers';
+import Game from './Pages/Game';
+import SelectPlayers from './Pages/SelectPlayers';
 
 class App extends Component {
 
@@ -11,11 +11,13 @@ class App extends Component {
       players: [
         {
           name: 'Player 1',
-          score: 0
+          score: 0,
+          isWinner: false
         },
         {
           name: 'Player 2',
-          score: 0
+          score: 0,
+          isWinner: false
         }
       ],
       playGame: false
@@ -29,22 +31,18 @@ class App extends Component {
   }
 
   render = () => (
-    <React.Fragment>{
+    <>{
       this.state.playGame ? 
       <Game 
         players={this.state.players}
-        handleAddEvent={this.handleAddEvent}
-        handleSubtractEvent={this.handleSubtractEvent}
         handleReset={this.handleReset}
       />
       :
       <SelectPlayers
         players={this.state.players}
-        changePlayerName={this.changePlayerName}
-        resetName={this.resetName}
         handleGameStart={this.handleGameStart}
       />
-    }</React.Fragment>
+    }</>
   );
 }
 
