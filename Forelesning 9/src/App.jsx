@@ -1,46 +1,34 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import Game from './Pages/Game';
 import SelectPlayers from './Pages/SelectPlayers';
 
-class App extends Component {
+const App = (props) => {
+  const [playGame, setPlayGame] = useState(false);
+  const [players, setPlayers] = useState([
+    {
+      name: 'Player 1',
+      score: 0,
+      isWinner: false
+    },
+    {
+      name: 'Player 2',
+      score: 0,
+      isWinner: false
+    }
+  ]);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      players: [
-        {
-          name: 'Player 1',
-          score: 0,
-          isWinner: false
-        },
-        {
-          name: 'Player 2',
-          score: 0,
-          isWinner: false
-        }
-      ],
-      playGame: false
-    };
-  }
-
-  handleGameStart = () => {
-    let newState = this.state;
-    newState.playGame = true;
-    this.setState(newState);
-  }
-
-  render = () => (
-    <>{
-      this.state.playGame ? 
+  return (
+    <>{playGame ? 
       <Game 
-        players={this.state.players}
-        handleReset={this.handleReset}
+        players={players}
       />
       :
       <SelectPlayers
-        players={this.state.players}
-        handleGameStart={this.handleGameStart}
+        players={players}
+        handleGameStart={() => {
+          setPlayGame(true);
+        }}
       />
     }</>
   );
